@@ -11,11 +11,13 @@
     <table>
         <tr>
             <th>Наименование товара</th>
+            <th>Количество</th>
             <th>Стоимость</th>
         </tr>
         {% for item in items %}
         <tr>
             <td>{{ item.title }}</td>
+            <td>1</td>
             <td>{{ item.price }}</td>
         </tr>
         {% endfor %}

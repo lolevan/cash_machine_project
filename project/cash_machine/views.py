@@ -32,7 +32,7 @@ class CashMachineView(APIView):
         pdf_file_path = os.path.join('media', pdf_file_name)
 
         # Указываем путь к wkhtmltopdf
-        path_to_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+        path_to_wkhtmltopdf = os.getenv('WKHTMLTOPDF_PATH', default='/usr/local/bin/wkhtmltopdf')
         config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
         pdfkit.from_string(html, pdf_file_path, configuration=config)
 
