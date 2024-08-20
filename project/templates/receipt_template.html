@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Receipt</title>
+</head>
+<body>
+    <h1>ООО "КОМПАНИЯ К"</h1>
+    <p>Добро пожаловать</p>
+    <p>{{ current_time }}</p>
+    <table>
+        <tr>
+            <th>Наименование товара</th>
+            <th>Количество</th>
+            <th>Стоимость</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.title }}</td>
+            <td>1</td>
+            <td>{{ item.price }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2">ИТОГ</td>
+            <td>{{ total_price }}</td>
+        </tr>
+    </table>
+</body>
+</html>
